@@ -167,10 +167,10 @@ aside  {
   max-width: 600px;
   margin: 0 auto;
 }
-.contenedor-input {
+.input-container {
   display: flex;
 }
-.contenedor-input label {
+.input-container label {
   margin-bottom: 1rem;
   color: var(--blanco);
 }
@@ -189,7 +189,7 @@ aside  {
 
 
 
-.listado-tareas {
+.tasks-list {
   max-width: 600px;
   margin: 0 auto;
 }

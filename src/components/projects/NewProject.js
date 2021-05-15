@@ -1,6 +1,10 @@
-import React,{useState} from 'react'
+import React,{useContext, useState} from 'react'
+import ProjectContext from "../../context/projects/ProjectContext"
 
 export default function NewProject() {
+
+    const ProjectContext = useContext(ProjectContext)
+    const {createProject} = ProjectContext
 
     const [newProject, setNewProject] = useState({
         name:"",
@@ -21,22 +25,29 @@ export default function NewProject() {
                 className="btn btn-block btn-primary"
             >Nuevo Proyecto</button>
 
-            <form
+            {
+                createProject
+                &&
+                <form
                 className="formulario-nuevo-proyecto"
-            >
-                <input 
-                    type="text"
-                    className="input-text"
-                    value={name}
-                    placeholder="Nombre Proyecto"
-                    name="name"
-                    onChange={handleChange}
-                />
+                >
+                    <input 
+                        type="text"
+                        className="input-text"
+                        value={name}
+                        placeholder="Nombre Proyecto"
+                        name="name"
+                        onChange={handleChange}
+                    />
 
-                <button
-                    className="btn btn-block btn-primary"
-                >Agregar Proyecto</button>
-            </form>
+                    <button
+                        className="btn btn-block btn-primary"
+                    >Agregar Proyecto</button>
+                </form>
+
+            }
+
+          
         </>
         
     )
