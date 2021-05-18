@@ -20,6 +20,7 @@ export default function TasksList() {
                     tasks.map((task)=>
                         <Task 
                             task={task}
+                            key={task.name}
                         />     
                     )
                     :

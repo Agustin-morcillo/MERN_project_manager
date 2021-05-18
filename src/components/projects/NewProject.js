@@ -1,10 +1,10 @@
 import React,{useContext, useState} from 'react'
-import ProjectContext from "../../context/projects/ProjectContext"
+import ProyectContext from "../../context/projects/ProjectContext"
 
 export default function NewProject() {
 
-    const ProjectContext = useContext(ProjectContext)
-    const {createProject} = ProjectContext
+    const ProjectsContext = useContext(ProyectContext)
+    const {newProjectForm,showForm} = ProjectsContext
 
     const [newProject, setNewProject] = useState({
         name:"",
@@ -23,10 +23,11 @@ export default function NewProject() {
         <>
             <button
                 className="btn btn-block btn-primary"
+                onClick={()=> showForm()}
             >Nuevo Proyecto</button>
 
             {
-                createProject
+                newProjectForm
                 &&
                 <form
                 className="formulario-nuevo-proyecto"
@@ -39,15 +40,12 @@ export default function NewProject() {
                         name="name"
                         onChange={handleChange}
                     />
-
+    
                     <button
                         className="btn btn-block btn-primary"
                     >Agregar Proyecto</button>
                 </form>
-
             }
-
-          
         </>
         
     )
