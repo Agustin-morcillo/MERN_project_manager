@@ -1,21 +1,24 @@
 import React, {useReducer} from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import ProjectContext from "./ProjectContext"
 import ProjectReducer from "./ProjectReducer"
-import {NEW_PROJECT_FORM,PROJECT_LIST} from "../../types"
+import {NEW_PROJECT_FORM,PROJECT_LIST,ADD_PROJECT,SHOW_ERROR,CURRENT_PROJECT,DELETE_PROJECT} from "../../types"
 
 const ProjectState = (props) => {
 
     const initialState = {
         newProjectForm: false,
-        exampleProjects: []
+        projectsList: [],
+        formError: false,
+        projectSelected: []
     }
 
     const [state, dispatch] = useReducer(ProjectReducer, initialState)
     
-    const exampleProjects = [
-        {name: "Tienda Virtual", id:1},
-        {name: "Intranet", id:2},
-        {name: "Diseño de Sitio Web", id:3},
+    const projectsList = [
+        {id:uuidv4(), name: "Tienda Virtual"},
+        {id:uuidv4(), name: "Intranet"},
+        {id:uuidv4(), name: "Diseño de Sitio Web"},
     ]
 
     const showForm = () => {
@@ -27,17 +30,52 @@ const ProjectState = (props) => {
     const getProjects = () => {
         dispatch({
             type:PROJECT_LIST,
-            payload: exampleProjects
+            payload: projectsList
+        })
+    }
+
+    const addProject = (project) => {
+        project.id = uuidv4();
+
+        dispatch({
+            type: ADD_PROJECT,
+            payload: project
+        })
+    }
+
+    const currentProject = (project) => {
+        dispatch({
+            type: CURRENT_PROJECT,
+            payload: project
+        })
+    }
+
+    const showError = () => {
+        dispatch({
+            type: SHOW_ERROR
+        })
+    }
+
+    const deleteProject = (projectId) => {
+        dispatch({
+            type:DELETE_PROJECT,
+            payload: projectId
         })
     }
 
     return (
          <ProjectContext.Provider
             value={{
-                exampleProjects: state.exampleProjects,
+                projectsList: state.projectsList,
                 newProjectForm: state.newProjectForm,
+                formError: state.formError,
+                projectSelected: state.projectSelected,
+                currentProject,
                 showForm,
-                getProjects
+                getProjects,
+                addProject,
+                showError,
+                deleteProject
             }}
          >
              {props.children}

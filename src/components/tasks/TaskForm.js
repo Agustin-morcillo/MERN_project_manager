@@ -1,6 +1,16 @@
-import React from 'react'
+import React,{useContext, useState,useEffect} from 'react'
+import ProyectContext from "../../context/projects/ProjectContext"
 
 export default function TaskForm() {
+
+    const ProjectsContext = useContext(ProyectContext)
+    const {projectSelected} = ProjectsContext
+
+    if(projectSelected.length < 1) {
+        return null
+    }
+
+
     return (
         <div className="formulario">
             <form>

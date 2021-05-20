@@ -4,7 +4,7 @@ import ProyectContext from "../../context/projects/ProjectContext"
 export default function NewProject() {
 
     const ProjectsContext = useContext(ProyectContext)
-    const {newProjectForm,showForm} = ProjectsContext
+    const {newProjectForm,showForm,addProject,formError,showError} = ProjectsContext
 
     const [newProject, setNewProject] = useState({
         name:"",
@@ -19,6 +19,20 @@ export default function NewProject() {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if(!name.trim()) {
+            return showError()
+        }
+        
+        addProject(newProject)
+        
+        setNewProject({
+            name:""
+        })
+    }
+
     return (
         <>
             <button
@@ -30,7 +44,8 @@ export default function NewProject() {
                 newProjectForm
                 &&
                 <form
-                className="formulario-nuevo-proyecto"
+                    className="formulario-nuevo-proyecto"
+                    onSubmit={handleSubmit}
                 >
                     <input 
                         type="text"
@@ -46,6 +61,7 @@ export default function NewProject() {
                     >Agregar Proyecto</button>
                 </form>
             }
+             {formError && <p className="mensaje error">Debes ingresar un nombre</p>}
         </>
         
     )
