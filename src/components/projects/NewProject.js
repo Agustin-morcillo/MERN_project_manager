@@ -4,7 +4,7 @@ import ProyectContext from "../../context/projects/ProjectContext"
 export default function NewProject() {
 
     const ProjectsContext = useContext(ProyectContext)
-    const {newProjectForm,showForm,addProject,formError,showError} = ProjectsContext
+    const {newProjectForm,showForm,addProject,formError,showFormError} = ProjectsContext
 
     const [newProject, setNewProject] = useState({
         name:"",
@@ -23,7 +23,7 @@ export default function NewProject() {
         e.preventDefault()
 
         if(!name.trim()) {
-            return showError()
+            return showFormError()
         }
         
         addProject(newProject)

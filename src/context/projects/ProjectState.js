@@ -2,7 +2,14 @@ import React, {useReducer} from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import ProjectContext from "./ProjectContext"
 import ProjectReducer from "./ProjectReducer"
-import {NEW_PROJECT_FORM,PROJECT_LIST,ADD_PROJECT,SHOW_ERROR,CURRENT_PROJECT,DELETE_PROJECT} from "../../types"
+import {
+    NEW_PROJECT_FORM,
+    PROJECT_LIST,
+    ADD_PROJECT,
+    PROJECT_FORM_ERROR,
+    CURRENT_PROJECT,
+    DELETE_PROJECT} from "../../types"
+
 
 const ProjectState = (props) => {
 
@@ -16,9 +23,9 @@ const ProjectState = (props) => {
     const [state, dispatch] = useReducer(ProjectReducer, initialState)
     
     const projectsList = [
-        {id:uuidv4(), name: "Tienda Virtual"},
-        {id:uuidv4(), name: "Intranet"},
-        {id:uuidv4(), name: "Diseño de Sitio Web"},
+        {id:1, name: "Tienda Virtual"},
+        {id:2, name: "Intranet"},
+        {id:3, name: "Diseño de Sitio Web"},
     ]
 
     const showForm = () => {
@@ -50,9 +57,9 @@ const ProjectState = (props) => {
         })
     }
 
-    const showError = () => {
+    const showFormError = () => {
         dispatch({
-            type: SHOW_ERROR
+            type: PROJECT_FORM_ERROR
         })
     }
 
@@ -74,7 +81,7 @@ const ProjectState = (props) => {
                 showForm,
                 getProjects,
                 addProject,
-                showError,
+                showFormError,
                 deleteProject
             }}
          >
