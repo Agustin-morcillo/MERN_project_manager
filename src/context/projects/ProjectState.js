@@ -50,10 +50,10 @@ const ProjectState = (props) => {
         })
     }
 
-    const currentProject = (project) => {
+    const currentProject = (projectId) => {
         dispatch({
             type: CURRENT_PROJECT,
-            payload: project
+            payload: projectId
         })
     }
 

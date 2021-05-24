@@ -1,4 +1,5 @@
 import React,{useReducer} from 'react'
+import { v4 as uuidv4 } from 'uuid';
 import TaskContext from "./TaskContext"
 import TaskReducer from "./TaskReducer"
 import {
@@ -6,6 +7,9 @@ import {
     ADD_TASK,
     TASK_FORM_ERROR,
     DELETE_TASK,
+    TASK_STATE,
+    CURRENT_TASK,
+    EDIT_TASK
 } from "../../types"
 
 
@@ -25,7 +29,8 @@ const TaskState = (props) => {
             { id: 10, name: "Elegir Hosting", state: true, projectId:1 },
         ],
         projectTasks: [],
-        formError: false
+        formError: false,
+        taskSelected: null
     }
 
     const [state, dispatch] = useReducer(TaskReducer,initialState)
@@ -38,6 +43,7 @@ const TaskState = (props) => {
     }
 
     const addTask = (task) => {
+        task.id = uuidv4()
         dispatch({
             type: ADD_TASK,
             payload: task
@@ -57,16 +63,41 @@ const TaskState = (props) => {
         })
     }
 
+    const changeTaskState = (task) => {
+        dispatch({
+            type: TASK_STATE,
+            payload: task
+        })
+    }
+
+    const getCurrentTask = (task) => {
+        dispatch({
+            type: CURRENT_TASK,
+            payload: task
+        })
+    }
+
+    const editTask = (task) => {
+        dispatch({
+            type: EDIT_TASK,
+            payload: task
+        })
+    }
+
     return (
         <TaskContext.Provider
             value={{
                 taskList: state.taskList,
                 projectTasks: state.projectTasks,
                 formError: state.formError,
+                taskSelected: state.taskSelected,
                 getTasks,
                 addTask,
                 showFormError,
-                removeTask
+                removeTask,
+                changeTaskState,
+                getCurrentTask,
+                editTask
             }}
         >
             {props.children}

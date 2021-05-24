@@ -17,15 +17,15 @@ export default function Login() {
     }
 
     return (
-        <div className="user-form">
-            <div className="form-container dark-shadow">
+        <div className="form-usuario">
+            <div className="contenedor-form sombra-dark">
                 <h1>Iniciar Sesión</h1>
 
                 <form>
-                    <div className="input-container">
+                    <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 
-                            type="text" 
+                            type="email" 
                             name="email"
                             value={email}
                             id="email"
@@ -34,7 +34,7 @@ export default function Login() {
                         />
                     </div>
 
-                    <div className="input-container">
+                    <div className="campo-form">
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password" 
@@ -46,14 +46,14 @@ export default function Login() {
                         />
                     </div>
 
-                    <div className="input-container">
+                    <div className="campo-form">
                         <button
-                            className="btn btn-primary btn-block"
+                            className="btn btn-primario btn-block"
                         >Iniciar Sesión</button>
                     </div>
                 </form>
 
-                <Link to={"/Register"} className="register-link">
+                <Link to={"/Register"} className="enlace-cuenta">
                     ¿No tenes cuenta? Regístrate
                 </Link>
             </div>

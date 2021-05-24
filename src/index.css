@@ -55,7 +55,7 @@ a {
   margin-top: 2rem;
   font-family: var(--headingFont);
   padding: 1.5rem;
-  font-size: 1.4;
+  font-size: 1.4rem;
   font-weight: 400;
   border-radius: .5rem;
   border: none;
@@ -64,7 +64,7 @@ a {
 .btn:hover {
   cursor: pointer;
 }
-.btn-primary {
+.btn-primario {
   background-color: var(--gris2);
   color: var(--blanco);
 }
@@ -92,7 +92,7 @@ a {
 }
 
 @media (min-width: 768px) {
-  .app-container {
+  .contenedor-app {
       display: flex;
       min-height: 100vh;
   }
@@ -101,7 +101,7 @@ a {
       background-color: var(--blanco);
       flex: 0 0 300px;
   }
-  .main-section {
+  .seccion-principal {
       flex: 1;
   }
 
@@ -167,11 +167,12 @@ aside  {
   max-width: 600px;
   margin: 0 auto;
 }
-.input-container {
+.contenedor-input {
   display: flex;
 }
-.input-container label {
+.contenedor-input label {
   margin-bottom: 1rem;
+  color: var(--blanco);
 }
 .input-text {
   padding: 1rem;
@@ -182,13 +183,13 @@ aside  {
 }
 
 /** TAREAS LISTADO **/
-.tasks-container {
+.contenedor-tareas {
   padding: 4rem;
 }
 
 
 
-.tasks-list {
+.listado-tareas {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -201,7 +202,6 @@ aside  {
   align-items: center;
   margin-bottom: 1rem;
   border-radius: .5rem;
-  height: 40px;
 
 }
 .sombra {
@@ -209,7 +209,7 @@ aside  {
   -moz-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
   box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
 }
-.dark-shadow {
+.sombra-dark {
   -webkit-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
   -moz-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
   box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
@@ -287,7 +287,7 @@ aside  {
   transition: opacity 200ms;
 }
 
-.user-form {
+.form-usuario {
     background-color: var(--gris2);
     height: 100vh;
     min-height: 800px;
@@ -296,7 +296,7 @@ aside  {
     justify-content: center;
 }
 
-.form-container {
+.contenedor-form {
     padding: 5rem 3rem;
     max-width: 500px;
     width: 95%;
@@ -304,35 +304,31 @@ aside  {
     border-radius: 1rem;
 }
 
-.input-container {
+.campo-form {
     display: flex;
     margin-bottom: 2rem;
     align-items: center;
 }
-.input-container:last-of-type {
+.campo-form:last-of-type {
   margin: 0;
 }
-.input-container label {
+.campo-form label {
   flex: 0 0 100px;
   font-family: var(--textFont);
 }
-.input-container input[type="password"],
-.input-container input[type="email"], 
-.input-container input[type="text"] {
+.campo-form input[type="password"],
+.campo-form input[type="email"], 
+.campo-form input[type="text"] {
   border: 1px solid #e1e1e1;
   padding: 1rem;
   flex: 1;
+  width: calc(100% - 32px);
 }
 
-.register-link {
+.enlace-cuenta {
   margin-top: 2rem;
   display: block;
   opacity: .7;
-  color: blue;
-}
-
-.register-link:hover {
-  text-decoration: underline;
 }
 
 .alerta {

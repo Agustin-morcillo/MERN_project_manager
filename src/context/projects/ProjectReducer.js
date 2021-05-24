@@ -19,7 +19,8 @@ export default (state,action) => {
                 projectsList: action.payload
             }
         case ADD_PROJECT:
-            return {...state, 
+            return {
+                ...state, 
                 projectsList: [...state.projectsList, action.payload],
                 newProjectForm: false,
                 formError: false
@@ -32,7 +33,7 @@ export default (state,action) => {
         case CURRENT_PROJECT:
             return {
                 ...state, 
-                projectSelected: state.projectsList.filter((project) => project.id === action.payload.id)
+                projectSelected: state.projectsList.filter((project) => project.id === action.payload)
             }
         case DELETE_PROJECT:
             return {

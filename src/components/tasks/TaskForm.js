@@ -1,5 +1,4 @@
-import React,{useContext, useState} from 'react'
-import { v4 as uuidv4 } from 'uuid';
+import React,{useContext, useState, useEffect} from 'react'
 import ProyectContext from "../../context/projects/ProjectContext"
 import TaskContext from "../../context/tasks/TaskContext"
 import Task from './Task';
@@ -10,7 +9,13 @@ export default function TaskForm() {
     const {projectSelected} = ProjectsContext
 
     const TasksContext = useContext(TaskContext)
-    const {addTask,formError,showFormError,getTasks} = TasksContext
+    const {addTask,formError,showFormError,getTasks,taskSelected,editTask} = TasksContext
+
+    useEffect(() => {
+        if(taskSelected) {
+            setNewTask(taskSelected)
+        }
+    }, [taskSelected])
 
     const [newTask, setNewTask] = useState({
         name: "",
@@ -29,7 +34,6 @@ export default function TaskForm() {
         setNewTask({
             ...newTask,
             [e.target.name]: e.target.value,
-            id: uuidv4(),
             projectId: currentProject.id,
         })
     }
@@ -40,9 +44,13 @@ export default function TaskForm() {
         if(!name.trim()) {
             return showFormError()
         }
-        
-        addTask(newTask)
 
+        if(taskSelected) {
+            editTask(newTask)
+        } else {
+            addTask(newTask)
+        }
+        
         getTasks(currentProject.id)
 
         setNewTask({
@@ -56,7 +64,7 @@ export default function TaskForm() {
             <form
                 onSubmit={handleSubmit}
             >
-                <div className="input-container">
+                <div className="contenedor-input">
                     <input 
                         type="text"
                         className="input-text"
@@ -67,10 +75,10 @@ export default function TaskForm() {
                     />
                 </div>
 
-                <div className="input-container">
+                <div className="contenedor-input">
                     <button
-                        className="btn btn-primary btn-submit btn-block"
-                    >Agregar tarea</button>
+                        className="btn btn-primario btn-submit btn-block"
+                    >{taskSelected ? "Editar Tarea" : "Agregar Tarea"}</button>
                 </div>
                 {formError && <p className="mensaje error">El nombre de la tarea es obligatorio</p>}
             </form>

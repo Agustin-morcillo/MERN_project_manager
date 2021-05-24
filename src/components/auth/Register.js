@@ -19,12 +19,12 @@ export default function Register() {
     }
 
     return (
-        <div className="user-form">
-            <div className="form-container dark-shadow">
+        <div className="form-usuario">
+            <div className="contenedor-form sombra-dark">
                 <h1>Obtener una cuenta</h1>
 
                 <form>
-                    <div className="input-container">
+                    <div className="campo-form">
                         <label htmlFor="name">Nombre</label>
                         <input 
                             type="text" 
@@ -36,10 +36,10 @@ export default function Register() {
                         />
                     </div>
 
-                    <div className="input-container">
+                    <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 
-                            type="text" 
+                            type="email" 
                             name="email"
                             value={email}
                             id="email"
@@ -48,7 +48,7 @@ export default function Register() {
                         />
                     </div>
 
-                    <div className="input-container">
+                    <div className="campo-form">
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password" 
@@ -60,7 +60,7 @@ export default function Register() {
                         />
                     </div>
 
-                    <div className="input-container">
+                    <div className="campo-form">
                         <label htmlFor="repassword">Confirmar Password</label>
                         <input 
                             type="password" 
@@ -72,14 +72,14 @@ export default function Register() {
                         />
                     </div>
 
-                    <div className="input-container">
+                    <div className="campo-form">
                         <button
-                            className="btn btn-primary btn-block"
+                            className="btn btn-primario btn-block"
                         >Registrarme</button>
                     </div>
                 </form>
 
-                <Link to={"/"} className="register-link">
+                <Link to={"/"} className="enlace-cuenta">
                     Volver a inicio de sesión
                 </Link>
             </div>

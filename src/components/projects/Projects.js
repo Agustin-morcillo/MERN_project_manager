@@ -6,13 +6,13 @@ import TaskList from "../tasks/TasksList"
 
 export default function Projects() {
     return (
-        <div className="app-container">
+        <div className="contenedor-app">
            <SideBar />
-            <div className="main-section">
+            <div className="seccion-principal">
                 <Header />
                 <main>
                     <TaskForm />
-                    <div className="tasks-container">
+                    <div className="contenedor-tareas">
                         <TaskList />
                     </div>
                 </main>

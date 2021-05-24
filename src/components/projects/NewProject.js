@@ -36,7 +36,7 @@ export default function NewProject() {
     return (
         <>
             <button
-                className="btn btn-block btn-primary"
+                className="btn btn-block btn-primario"
                 onClick={()=> showForm()}
             >Nuevo Proyecto</button>
 
@@ -57,7 +57,7 @@ export default function NewProject() {
                     />
     
                     <button
-                        className="btn btn-block btn-primary"
+                        className="btn btn-primario btn-block"
                     >Agregar Proyecto</button>
                 </form>
             }

@@ -3,6 +3,9 @@ import {
     ADD_TASK,
     TASK_FORM_ERROR,
     DELETE_TASK,
+    TASK_STATE,
+    CURRENT_TASK,
+    EDIT_TASK
 } from "../../types"
 
 export default (state,action) => {
@@ -27,6 +30,18 @@ export default (state,action) => {
             return {
                 ...state, 
                 taskList: state.taskList.filter(task => task.id !== action.payload)
+            }
+        case TASK_STATE:
+        case EDIT_TASK:
+            return {
+                ...state,
+                taskList: state.taskList.map((task)=> task.id === action.payload.id ? action.payload : task),
+                taskSelected: null
+            }
+        case CURRENT_TASK:
+            return {
+                ...state,
+                taskSelected: action.payload
             }
         default:
             return state
