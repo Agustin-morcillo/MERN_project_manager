@@ -13,6 +13,18 @@ export const TASK_STATE = "TASK_STATE"
 export const CURRENT_TASK = "CURRENT_TASK"
 export const EDIT_TASK = "EDIT_TASK"
 
+export const SHOW_ALERT = "SHOW_ALERT"
+export const HIDE_ALERT = "HIDE_ALERT"
+
+export const REGISTRATION_SUCCESSFUL = "REGISTRATION_SUCCESSFUL"
+export const REGISTRATION_ERROR = "REGISTRATION_ERROR"
+export const GET_USER = "GET_USER"
+export const LOGIN_SUCCESSFUL = "LOGIN_SUCCESSFUL"
+export const LOGIN_ERROR = "LOGIN_ERROR"
+export const LOGOUT = "LOGOUT"
+
+
+
 
 
 

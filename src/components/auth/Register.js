@@ -1,7 +1,25 @@
-import React,{useState} from 'react'
+import React,{useState, useContext, useEffect} from 'react'
 import {Link} from "react-router-dom"
+import AlertContext from "../../context/alerts/AlertContext"
+import AuthContext from "../../context/auth/AuthContext"
 
-export default function Register() {
+export default function Register(props) {
+
+    const alertContext = useContext(AlertContext)
+    const {alert, showAlert, hideAlert} = alertContext
+
+    const authContext = useContext(AuthContext)
+    const {registerUser, message, auth} = authContext
+
+    useEffect(() => {
+        if(auth) {
+            return props.history.push("/projects")
+        }
+
+        if(message) {
+            return showAlert(message.msg, message.category)
+        }
+    }, [message, auth, props.history])
 
     const [register,setRegister] = useState({
         name:"",
@@ -12,18 +30,47 @@ export default function Register() {
     const {name, email,password, repassword} = register
     
     const handleChange = (e) => {
-        setLogin({
+        setRegister({
             ...register,
             [e.target.name]: e.target.value
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if( !name.trim() ||
+            !email.trim() ||
+            !password.trim() ||
+            !repassword.trim() ) {
+                return showAlert("Debes completar todos los campos", "alerta-error")
+            }
+        
+        if(password.length < 6) {
+            return showAlert("El password debe tener al menos 6 caracteres", "alerta-error")
+        }
+
+        if(password !== repassword) {
+            return showAlert("Los passwords no coinciden", "alerta-error")
+        }
+        hideAlert()
+        
+        registerUser({
+            name,
+            email,
+            password
+        })
+    }
+
     return (
         <div className="form-usuario">
+            {alert && <div className={`alerta ${alert.category}`}>{alert.msg}</div>}
             <div className="contenedor-form sombra-dark">
                 <h1>Obtener una cuenta</h1>
 
-                <form>
+                <form
+                    onSubmit={handleSubmit}
+                >
                     <div className="campo-form">
                         <label htmlFor="name">Nombre</label>
                         <input 
