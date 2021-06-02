@@ -1,28 +1,24 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useContext} from 'react'
 import {Route} from "react-router-dom"
 import AuthContext from "../../context/auth/AuthContext"
 
-export default function PrivateRoute({component: Component, ...props}) {
+export default function PublicRoute({component: Component, ...props}) {
 
     const authContext = useContext(AuthContext)
-    const {auth, getAuthUser} = authContext
-
-    useEffect(() => {
-        getAuthUser()
-    }, [])
+    const {auth} = authContext
 
     const token = localStorage.getItem("token")
 
     if(!auth && !token) {
+        return <Component {...props} />
+    } else {
         return (
             <Route component={() => {
-                window.location.href = process.env.REACT_APP_LOCAL_URL
+                window.location.href = `${process.env.REACT_APP_LOCAL_URL}projects`
                 return null
             }} 
             />
         )
-    } else {
-        return <Component {...props} />
     }
 } 
 
