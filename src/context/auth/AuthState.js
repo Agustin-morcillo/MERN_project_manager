@@ -28,18 +28,18 @@ const AuthState = (props) => {
     const registerUser = async (data) => {
         try {
             const response = await axiosClient.post("/api/users/register", data)
-            console.log(response)
+         
             dispatch({
                 type: REGISTRATION_SUCCESSFUL,
                 payload: response.data.token
             })
             getAuthUser()
         } catch (error) {
-            console.log(error.response.data.errors[0].msg)
             const alert = {
                 msg: error.response.data.errors[0].msg,
                 category: "alerta-error"
             }
+
             dispatch({
                 type: REGISTRATION_ERROR,
                 payload: alert
@@ -55,7 +55,7 @@ const AuthState = (props) => {
         
         try {
             const response = await axiosClient.get("/api/users")
-            console.log(response.data)
+
             dispatch({
                 type:GET_USER,
                 payload: response.data
@@ -70,14 +70,13 @@ const AuthState = (props) => {
     const userLogin = async (data) => {
         try {
             const response = await axiosClient.post("/api/users/login", data)
-            console.log(response)
+   
             dispatch({
                 type: LOGIN_SUCCESSFUL,
                 payload: response.data.token
             })
             getAuthUser()
         } catch (error) {
-            console.log(error.response.data.errors[0])
             const alert = {
                 msg: error.response.data.errors[0].msg,
                 category: "alerta-error"

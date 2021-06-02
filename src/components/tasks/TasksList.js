@@ -45,7 +45,7 @@ export default function TasksList() {
 
             <button
                 className="btn btn-eliminar"
-                onClick={()=> deleteProject(currentProject.id)}
+                onClick={()=> deleteProject(currentProject._id)}
             >Eliminar Proyecto &times;</button>
         </>
     )

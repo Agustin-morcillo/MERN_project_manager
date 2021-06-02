@@ -33,12 +33,12 @@ export default (state,action) => {
         case CURRENT_PROJECT:
             return {
                 ...state, 
-                projectSelected: state.projectsList.filter((project) => project.id === action.payload)
+                projectSelected: state.projectsList.filter((project) => project._id === action.payload)
             }
         case DELETE_PROJECT:
             return {
                 ...state, 
-                projectsList: state.projectsList.filter((project) => project.id !== action.payload),   
+                projectsList: state.projectsList.filter((project) => project._id !== action.payload),   
                 projectSelected: []
             }
         default:

@@ -11,8 +11,8 @@ export default function Project({project}) {
     const {getTasks} = TasksContext
 
     const handleClick = () => {
-        currentProject(project.id)
-        getTasks(project.id)
+        currentProject(project._id)
+        getTasks(project._id)
     }
 
     return (
