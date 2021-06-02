@@ -1,7 +1,25 @@
-import React,{useState} from 'react'
+import React,{useState, useContext, useEffect} from 'react'
 import {Link} from "react-router-dom"
+import AlertContext from "../../context/alerts/AlertContext"
+import AuthContext from "../../context/auth/AuthContext"
 
-export default function Login() {
+export default function Login(props) {
+
+    const alertContext = useContext(AlertContext)
+    const {alert, showAlert, hideAlert} = alertContext
+
+    const authContext = useContext(AuthContext)
+    const {userLogin, message, auth} = authContext
+
+    useEffect(() => {
+        if(auth) {
+            return props.history.push("/projects")
+        }
+
+        if(message) {
+            return showAlert(message.msg, message.category)
+        }
+    }, [message, auth, props.history])
 
     const [login,setLogin] = useState({
         email:"",
@@ -16,12 +34,29 @@ export default function Login() {
         })
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        if(!email.trim() || !password.trim()) {
+            return showAlert("Debes completar todos los campos", "alerta-error")
+        }
+        hideAlert()
+
+        userLogin({
+            email,
+            password
+        })
+    }
+
     return (
         <div className="form-usuario">
+             {alert && <div className={`alerta ${alert.category}`}>{alert.msg}</div>}
             <div className="contenedor-form sombra-dark">
                 <h1>Iniciar Sesión</h1>
 
-                <form>
+                <form
+                    onSubmit={handleSubmit}
+                >
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 
