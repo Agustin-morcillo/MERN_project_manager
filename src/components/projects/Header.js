@@ -8,6 +8,7 @@ export default function Header() {
 
     useEffect(() => {
         getAuthUser()
+        // eslint-disable-next-line
     }, [])
 
     return (

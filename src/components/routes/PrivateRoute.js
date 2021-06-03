@@ -9,6 +9,7 @@ export default function PrivateRoute({component: Component, ...props}) {
 
     useEffect(() => {
         getAuthUser()
+        // eslint-disable-next-line
     }, [])
 
     const token = localStorage.getItem("token")
