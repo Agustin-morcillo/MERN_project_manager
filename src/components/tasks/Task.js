@@ -5,20 +5,20 @@ import ProyectContext from "../../context/projects/ProjectContext"
 export default function Task({task}) {
 
     const TasksContext = useContext(TaskContext)
-    const {removeTask, getTasks, changeTaskState,getCurrentTask} = TasksContext
+    const {removeTask, getTasks, editTask,getCurrentTask} = TasksContext
 
     const ProjectsContext = useContext(ProyectContext)
     const {projectSelected} = ProjectsContext
     const [currentProject] = projectSelected
 
     const deleteTask = (id) => {
-        removeTask(id)
-        getTasks(currentProject.id)
+        removeTask(id, currentProject._id)
+        getTasks(currentProject._id)
     }
 
     const updateTaskState = (task) => {
         task.state = !task.state
-        changeTaskState(task)
+        editTask(task)
     }
 
     const getTask = (task) => {
@@ -53,7 +53,7 @@ export default function Task({task}) {
 
                 <button
                     className="btn btn-scundario"
-                    onClick={()=> deleteTask(task.id)}
+                    onClick={()=> deleteTask(task._id)}
                 >Eliminar</button>
             </div>
         </li>
