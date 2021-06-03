@@ -14,6 +14,7 @@ export default function TaskForm() {
         if(taskSelected) {
             setNewTask(taskSelected)
         }
+        // eslint-disable-next-line
     }, [taskSelected])
 
     const [newTask, setNewTask] = useState({

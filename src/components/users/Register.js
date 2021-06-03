@@ -19,6 +19,7 @@ export default function Register(props) {
         if(message) {
             return showAlert(message.msg, message.category)
         }
+        // eslint-disable-next-line
     }, [message, auth, props.history])
 
     const [register,setRegister] = useState({

@@ -10,6 +10,7 @@ export default function ProjectsList() {
 
     useEffect(() => {
         getProjects()
+        // eslint-disable-next-line
     }, [])
 
     if(projectsList.length < 1) {
