@@ -19,9 +19,7 @@ export default function TaskForm() {
 
     const [newTask, setNewTask] = useState({
         name: "",
-        id: null,
         projectId: null,
-        state: false
     })
     const {name} = newTask
 
@@ -34,7 +32,6 @@ export default function TaskForm() {
         setNewTask({
             ...newTask,
             [e.target.name]: e.target.value,
-            projectId: currentProject.id,
         })
     }
 
@@ -48,10 +45,11 @@ export default function TaskForm() {
         if(taskSelected) {
             editTask(newTask)
         } else {
+            newTask.projectId = currentProject._id
             addTask(newTask)
         }
         
-        getTasks(currentProject.id)
+        getTasks(currentProject._id)
 
         setNewTask({
             ...newTask,

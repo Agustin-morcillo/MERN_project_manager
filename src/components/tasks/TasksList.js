@@ -26,9 +26,9 @@ export default function TasksList() {
                     projectTasks.length > 0 
                     ?
                     <TransitionGroup>
-                         { projectTasks.map((task) =>
+                         { projectTasks.map((task, i) =>
                             <CSSTransition
-                                key={task.id}
+                                key={i}
                                 timeout={200}
                                 classNames="tarea"
                             >

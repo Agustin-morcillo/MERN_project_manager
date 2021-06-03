@@ -3,7 +3,6 @@ import {
     ADD_TASK,
     TASK_FORM_ERROR,
     DELETE_TASK,
-    TASK_STATE,
     CURRENT_TASK,
     EDIT_TASK
 } from "../../types"
@@ -13,12 +12,12 @@ export default (state,action) => {
         case PROJECT_TASKS:
             return {
                 ...state, 
-                projectTasks: state.taskList.filter(task => task.projectId === action.payload)
+                projectTasks: action.payload
             }
         case ADD_TASK:
             return {
                 ...state, 
-                taskList: [...state.taskList, action.payload],
+                projectTasks: [...state.projectTasks, action.payload],
                 formError: false
             }
         case TASK_FORM_ERROR:
@@ -29,13 +28,12 @@ export default (state,action) => {
         case DELETE_TASK:
             return {
                 ...state, 
-                taskList: state.taskList.filter(task => task.id !== action.payload)
+                projectTasks: state.projectTasks.filter(task => task._id !== action.payload)
             }
-        case TASK_STATE:
         case EDIT_TASK:
             return {
                 ...state,
-                taskList: state.taskList.map((task)=> task.id === action.payload.id ? action.payload : task),
+                projectTasks: state.projectTasks.map((task)=> task._id === action.payload._id ? action.payload : task),
                 taskSelected: null
             }
         case CURRENT_TASK:
