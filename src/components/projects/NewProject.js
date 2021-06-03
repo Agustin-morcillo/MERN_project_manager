@@ -57,8 +57,8 @@ export default function NewProject() {
                     />
     
                     <button
-                        className="btn btn-primario btn-block"
-                    >Agregar Proyecto</button>
+                        className="btn btn-add btn-block"
+                    ><i className="fas fa-plus icon"></i>Agregar Proyecto</button>
                 </form>
             }
              {formError && <p className="mensaje error">Debes ingresar un nombre</p>}

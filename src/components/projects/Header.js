@@ -15,12 +15,12 @@ export default function Header() {
             {
                 user && <p className="nombre-usuario">Hola <span>{user.name}</span></p>
             }
-            <nav className="nav-principal">
+            <div>
                 <button 
                     className="btn btn-blank cerrar-sesion"
                     onClick={()=> userLogout()}
-                >Cerrar Sesión</button>
-            </nav>
+                ><i className="fas fa-sign-out-alt icon"></i>Cerrar Sesión</button>
+            </div>
         </header>
     )
 }

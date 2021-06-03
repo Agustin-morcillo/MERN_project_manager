@@ -49,6 +49,9 @@ a {
   text-decoration: none;
   color: var(--gris2);
 }
+.icon{
+  padding-right: 1rem;
+}
 
 /** BOTONES **/
 .btn {
@@ -87,8 +90,22 @@ a {
   display: block;
   background-color: transparent;
 }
+.btn-add {
+  background-color: rgb(23, 160, 23);
+  color: var(--blanco);
+}
+.btn-add:hover {
+  background-color: rgb(24, 139, 24);
+  color: var(--blanco);
+}
+
+
 .btn-eliminar {
-  background-color: var(--blanco);
+  background-color: rgb(248, 69, 69);
+  color: var(--blanco);
+}
+.btn-eliminar:hover {
+  background-color: rgb(214, 59, 59);
 }
 
 @media (min-width: 768px) {
@@ -102,9 +119,8 @@ a {
       flex: 0 0 300px;
   }
   .seccion-principal {
-      flex: 1;
+      flex: 2;
   }
-
 }
 
 
@@ -150,12 +166,9 @@ aside  {
 .nombre-usuario span {
   font-weight: 900;
 }
-.nav-principal a {
+.cerrar-sesion {
   color: var(--blanco);
-  text-decoration: none;
-}
-.nav-principal a:first-of-type {
-  margin-right: 2rem;
+  font-size: 2rem;
 }
 
 /** Formulario crear y editar tareas **/
@@ -202,6 +215,7 @@ aside  {
   align-items: center;
   margin-bottom: 1rem;
   border-radius: .5rem;
+  height: 60px;
 
 }
 .sombra {
@@ -329,6 +343,11 @@ aside  {
   margin-top: 2rem;
   display: block;
   opacity: .7;
+  color: blue
+}
+
+.enlace-cuenta:hover {
+  text-decoration: underline;
 }
 
 .alerta {
@@ -360,4 +379,19 @@ aside  {
 .alerta-error {
   background-color: rgb(230, 78, 78);
   color: var(--blanco);
+}
+
+@media (max-width: 768px) {
+ .app-header{
+   position: absolute;
+   width: 100%;
+   top:0;
+ }
+ .first-section{
+   margin-top: 100px;
+ }
+ .project-select{
+   display: none;
+ }
+
 }

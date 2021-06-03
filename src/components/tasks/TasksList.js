@@ -13,7 +13,7 @@ export default function TasksList() {
     const {projectTasks} = TasksContext
 
     if(projectSelected.length < 1) {
-        return <h2>Selecciona un proyecto</h2>
+        return <h2 className="project-select">Selecciona un proyecto</h2>
     }
 
     const [currentProject] = projectSelected
@@ -39,14 +39,14 @@ export default function TasksList() {
                         )}
                     </TransitionGroup>
                     :
-                    <li className="tarea">No hay tareas</li>
+                    <li className="tarea">No hay tareas en este proyecto</li>
                 }
             </ul>
 
             <button
                 className="btn btn-eliminar"
                 onClick={()=> deleteProject(currentProject._id)}
-            >Eliminar Proyecto &times;</button>
+            ><i className="fas fa-times icon"></i>Eliminar Proyecto</button>
         </>
     )
 }

@@ -52,9 +52,9 @@ export default function Task({task}) {
                 >Editar</button>
 
                 <button
-                    className="btn btn-scundario"
+                    className="btn btn-eliminar"
                     onClick={()=> deleteTask(task._id)}
-                >Eliminar</button>
+                ><i className="fas fa-times icon"></i>Eliminar</button>
             </div>
         </li>
     )
