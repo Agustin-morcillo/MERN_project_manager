@@ -6,7 +6,7 @@ import {
     CURRENT_PROJECT,
     DELETE_PROJECT} from "../../types"
 
-export default (state,action) => {
+const ProjectReducer = (state,action) => {
     switch(action.type) {
         case NEW_PROJECT_FORM:
             return {
@@ -45,4 +45,6 @@ export default (state,action) => {
             return state
     }
 }
+
+export default ProjectReducer
 

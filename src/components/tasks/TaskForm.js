@@ -1,7 +1,6 @@
 import React,{useContext, useState, useEffect} from 'react'
 import ProyectContext from "../../context/projects/ProjectContext"
 import TaskContext from "../../context/tasks/TaskContext"
-import Task from './Task';
 
 export default function TaskForm() {
 

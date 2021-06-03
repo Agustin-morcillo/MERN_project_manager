@@ -7,7 +7,7 @@ import {
     LOGOUT
 } from "../../types"
 
-export default (state,action) => {
+const AuthReducer = (state,action) => {
     switch (action.type) {
         case REGISTRATION_SUCCESSFUL:
         case LOGIN_SUCCESSFUL:
@@ -44,3 +44,4 @@ export default (state,action) => {
             return state
     }
 }
+export default AuthReducer

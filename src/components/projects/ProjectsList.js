@@ -1,4 +1,4 @@
-import React,{useContext, useState,useEffect} from 'react'
+import React,{useContext,useEffect} from 'react'
 import { CSSTransition, TransitionGroup} from "react-transition-group"
 import Project from "./Project"
 import ProyectContext from "../../context/projects/ProjectContext"
