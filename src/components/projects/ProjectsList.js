@@ -19,14 +19,14 @@ export default function ProjectsList() {
 
     return (
         <>
-            <ul className="listado-proyectos">
+            <ul className="projects-list">
                 <TransitionGroup>
                     {
                     projectsList.map(project => (
                         <CSSTransition
                             key={project._id}
                             timeout={200}
-                            classNames="proyecto"
+                            classNames="project"
                         >
                              <Project 
                                 project={project}

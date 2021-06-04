@@ -14,13 +14,13 @@ export default function Header() {
     return (
         <header className="app-header">
             {
-                user && <p className="nombre-usuario">Hola <span>{user.name}</span></p>
+                user && <p className="user-name">Hola <span>{user.name}</span></p>
             }
             <div>
                 <button 
-                    className="btn btn-blank cerrar-sesion"
+                    className="btn btn-blank logout"
                     onClick={()=> userLogout()}
-                ><i className="fas fa-sign-out-alt icon"></i>Cerrar Sesión</button>
+                ><i className="fas fa-sign-out-alt icon"></i>Logout</button>
             </div>
         </header>
     )

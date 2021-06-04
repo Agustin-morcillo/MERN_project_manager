@@ -36,7 +36,7 @@ export default function NewProject() {
     return (
         <>
             <button
-                className="btn btn-block btn-primario"
+                className="btn btn-block btn-primary"
                 onClick={()=> showForm()}
             >Nuevo Proyecto</button>
 
@@ -44,7 +44,7 @@ export default function NewProject() {
                 newProjectForm
                 &&
                 <form
-                    className="formulario-nuevo-proyecto"
+                    className="new-project-form"
                     onSubmit={handleSubmit}
                 >
                     <input 
@@ -61,7 +61,7 @@ export default function NewProject() {
                     ><i className="fas fa-plus icon"></i>Agregar Proyecto</button>
                 </form>
             }
-             {formError && <p className="mensaje error">Debes ingresar un nombre</p>}
+             {formError && <p className="message error">Debes ingresar un nombre</p>}
         </>
         
     )

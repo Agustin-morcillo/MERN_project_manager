@@ -5,14 +5,14 @@ import ProjectsList from "../projects/ProjectsList"
 export default function SideBar() {
     return (
         <aside>
-            <div className="first-section">
+            <div className="side-bar-first-section">
             <h1>MERN<span>Tasks</span></h1>
 
             <NewProject />
             </div>
             
 
-            <div className="proyectos">
+            <div className="projects">
                 <h2>Tus Proyectos</h2>
                 <ProjectsList />
             </div>

@@ -64,15 +64,15 @@ export default function Register(props) {
     }
 
     return (
-        <div className="form-usuario">
+        <div className="user-form-container">
             {alert && <div className={`alerta ${alert.category}`}>{alert.msg}</div>}
-            <div className="contenedor-form sombra-dark">
+            <div className="form-container shadow-dark">
                 <h1>Obtener una cuenta</h1>
 
                 <form
                     onSubmit={handleSubmit}
                 >
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <label htmlFor="name">Nombre</label>
                         <input 
                             type="text" 
@@ -84,7 +84,7 @@ export default function Register(props) {
                         />
                     </div>
 
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <label htmlFor="email">Email</label>
                         <input 
                             type="email" 
@@ -96,7 +96,7 @@ export default function Register(props) {
                         />
                     </div>
 
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password" 
@@ -108,7 +108,7 @@ export default function Register(props) {
                         />
                     </div>
 
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <label htmlFor="repassword">Confirmar Password</label>
                         <input 
                             type="password" 
@@ -120,14 +120,14 @@ export default function Register(props) {
                         />
                     </div>
 
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <button
-                            className="btn btn-primario btn-block"
+                            className="btn btn-primary btn-block"
                         >Registrarme</button>
                     </div>
                 </form>
 
-                <Link to={"/"} className="enlace-cuenta">
+                <Link to={"/"} className="login-register-link">
                     Volver a inicio de sesión
                 </Link>
             </div>

@@ -50,15 +50,15 @@ export default function Login(props) {
     }
 
     return (
-        <div className="form-usuario">
+        <div className="user-form-container">
              {alert && <div className={`alerta ${alert.category}`}>{alert.msg}</div>}
-            <div className="contenedor-form sombra-dark">
+            <div className="form-container shadow-dark">
                 <h1>Iniciar Sesión</h1>
 
                 <form
                     onSubmit={handleSubmit}
                 >
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <label htmlFor="email">Email</label>
                         <input 
                             type="email" 
@@ -70,7 +70,7 @@ export default function Login(props) {
                         />
                     </div>
 
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <label htmlFor="password">Password</label>
                         <input 
                             type="password" 
@@ -82,14 +82,14 @@ export default function Login(props) {
                         />
                     </div>
 
-                    <div className="campo-form">
+                    <div className="form-input-container">
                         <button
-                            className="btn btn-primario btn-block"
+                            className="btn btn-primary btn-block"
                         >Iniciar Sesión</button>
                     </div>
                 </form>
 
-                <Link to={"/Register"} className="enlace-cuenta">
+                <Link to={"/Register"} className="login-register-link">
                     ¿No tenes cuenta? Regístrate
                 </Link>
             </div>

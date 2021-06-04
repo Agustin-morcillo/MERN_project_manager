@@ -16,13 +16,13 @@ export default function Projects() {
     }, [])
 
     return (
-        <div className="contenedor-app">
+        <div className="app-container">
            <SideBar />
-            <div className="seccion-principal">
+            <div className="main-section">
                 <Header />
                 <main>
                     <TaskForm />
-                    <div className="contenedor-tareas">
+                    <div className="tasks-container">
                         <TaskList />
                     </div>
                 </main>

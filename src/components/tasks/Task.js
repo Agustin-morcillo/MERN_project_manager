@@ -26,35 +26,35 @@ export default function Task({task}) {
     }
 
     return (
-        <li className="tarea sombra">
+        <li className="task shadow">
             <p>{task.name} </p>
 
-            <div className="estado">
+            <div className="state">
                 {
                     task.state
                     ?
                     <button
-                        className="completo"
+                        className="complete"
                         onClick={()=> updateTaskState(task)}
                     >Completo</button>
                     :
                     <button
-                        className="incompleto"
+                        className="incomplete"
                         onClick={()=> updateTaskState(task)}
                     >Incompleto</button>
                 }
             </div>
 
-            <div className="acciones">
+            <div className="actions">
                 <button
-                    className="btn btn-primario"
+                    className="btn btn-primary"
                     onClick={()=> getTask(task)}
                 >Editar</button>
 
                 <button
-                    className="btn btn-eliminar"
+                    className="btn btn-delete"
                     onClick={()=> deleteTask(task._id)}
-                ><i className="fas fa-times icon"></i>Eliminar</button>
+                ><i className="fas fa-times icon delete-icon"></i>Eliminar</button>
             </div>
         </li>
     )

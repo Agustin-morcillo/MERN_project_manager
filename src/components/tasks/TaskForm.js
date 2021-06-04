@@ -58,11 +58,11 @@ export default function TaskForm() {
     }
 
     return (
-        <div className="formulario">
+        <div className="task-form">
             <form
                 onSubmit={handleSubmit}
             >
-                <div className="contenedor-input">
+                <div className="input-container">
                     <input 
                         type="text"
                         className="input-text"
@@ -73,12 +73,12 @@ export default function TaskForm() {
                     />
                 </div>
 
-                <div className="contenedor-input">
+                <div className="input-container">
                     <button
-                        className="btn btn-primario btn-submit btn-block"
+                        className="btn btn-primary btn-submit btn-block"
                     >{taskSelected ? "Editar Tarea" : "Agregar Tarea"}</button>
                 </div>
-                {formError && <p className="mensaje error">El nombre de la tarea es obligatorio</p>}
+                {formError && <p className="message error">El nombre de la tarea es obligatorio</p>}
             </form>
             
         </div>

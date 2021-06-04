@@ -21,7 +21,7 @@ export default function TasksList() {
     return (
         <>
             <h2>Proyecto: {currentProject.name}</h2>
-            <ul className="listado-tareas">
+            <ul className="tasks-list">
                 {
                     projectTasks.length > 0 
                     ?
@@ -30,7 +30,7 @@ export default function TasksList() {
                             <CSSTransition
                                 key={i}
                                 timeout={200}
-                                classNames="tarea"
+                                classNames="task"
                             >
                                 <Task 
                                     task={task}
@@ -39,14 +39,14 @@ export default function TasksList() {
                         )}
                     </TransitionGroup>
                     :
-                    <li className="tarea">No hay tareas en este proyecto</li>
+                    <li className="task">No hay tareas en este proyecto</li>
                 }
             </ul>
 
             <button
-                className="btn btn-eliminar"
+                className="btn btn-delete"
                 onClick={()=> deleteProject(currentProject._id)}
-            ><i className="fas fa-times icon"></i>Eliminar Proyecto</button>
+            ><i className="fas fa-times icon delete-icon"></i>Eliminar Proyecto</button>
         </>
     )
 }
