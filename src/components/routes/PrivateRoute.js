@@ -17,7 +17,7 @@ export default function PrivateRoute({component: Component, ...props}) {
     if(!auth && !token) {
         return (
             <Route component={() => {
-                window.location.href = process.env.REACT_APP_LOCAL_URL
+                window.location.href = process.env.REACT_APP_LOCAL_URL || "https://mern-tasks-sigma.vercel.app/"
                 return null
             }} 
             />

@@ -14,7 +14,7 @@ export default function PublicRoute({component: Component, ...props}) {
     } else {
         return (
             <Route component={() => {
-                window.location.href = `${process.env.REACT_APP_LOCAL_URL}projects`
+                window.location.href = `${process.env.REACT_APP_LOCAL_URL}projects` || "https://mern-tasks-sigma.vercel.app/projects"
                 return null
             }} 
             />
