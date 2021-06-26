@@ -5,29 +5,32 @@
   --gris2: #2f3848;
   --gris3: #1a202d;
   --negro: #000000;
-  --headingFont:'Raleway', sans-serif;
-  --textFont:  'Roboto', sans-serif;
+  --headingFont: "Raleway", sans-serif;
+  --textFont: "Roboto", sans-serif;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
-} 
+}
 
 html {
   box-sizing: border-box;
   height: 100%;
-  font-size: 62.5%; 
+  font-size: 62.5%;
 }
 
 body {
   min-height: 100%;
   background-color: var(--gris1);
-  font-size: 16px; 
+  font-size: 16px;
   font-size: 1.6rem;
   font-family: var(--textFont);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--headingFont);
   font-weight: 900;
   margin: 0 0 4rem 0;
@@ -58,7 +61,7 @@ a {
   color: var(--gris2);
 }
 
-.icon{
+.icon {
   padding-right: 7px;
 }
 
@@ -69,9 +72,9 @@ a {
   padding: 1.5rem;
   font-size: 1.4rem;
   font-weight: 400;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -123,7 +126,7 @@ a {
 }
 
 /* SideBar*/
-aside  {
+aside {
   padding: 3rem;
 }
 
@@ -137,7 +140,7 @@ aside  {
   background-color: var(--gris1);
 }
 
-.new-project-form .input-text::placeholder{
+.new-project-form .input-text::placeholder {
   color: var(--gris2);
 }
 
@@ -201,7 +204,7 @@ aside  {
 .input-text {
   padding: 1rem;
   border: none;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   flex: 1;
   width: 100%;
 }
@@ -215,7 +218,7 @@ aside  {
   font-size: 2rem;
 }
 
-.projects-list li{
+.projects-list li {
   list-style-type: disc;
 }
 
@@ -228,23 +231,23 @@ aside  {
   display: flex;
   justify-content: space-between;
   background-color: var(--blanco);
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   align-items: center;
   margin-bottom: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   height: 60px;
 }
 
 .shadow {
-  -webkit-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
-  -moz-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
-  box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
+  -webkit-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  -moz-box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
+  box-shadow: 0px 4px 10px -3px rgba(117, 117, 117, 1);
 }
 
 .shadow-dark {
-  -webkit-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
-  -moz-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
-  box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
+  -webkit-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
 }
 
 .task .actions .btn:first-of-type {
@@ -258,8 +261,8 @@ aside  {
 }
 
 .task .btn {
-  padding: .8rem;
-  font-size:1.4rem;
+  padding: 0.8rem;
+  font-size: 1.4rem;
   border-radius: 0;
   margin: 0;
 }
@@ -268,13 +271,13 @@ aside  {
   margin-right: 1rem;
 }
 
-.state button, 
+.state button,
 .message {
   font-weight: 900;
   font-family: var(--textFont);
   font-size: 1rem;
-  padding: .5rem;
-  border-radius: .5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   border: none;
 }
@@ -288,13 +291,13 @@ aside  {
   cursor: default;
 }
 
-.complete{
-  background-color: rgba(154, 252, 154, .3);
+.complete {
+  background-color: rgba(154, 252, 154, 0.3);
   color: var(--gris3);
 }
 
-.incomplete{
-  background-color: rgba(255, 178, 178, .4);
+.incomplete {
+  background-color: rgba(255, 178, 178, 0.4);
   color: var(--gris3);
 }
 
@@ -327,26 +330,26 @@ aside  {
   transition: opacity 200ms;
 }
 
-.user-form-container{
-    background-color: var(--gris2);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.user-form-container {
+  background-color: var(--gris2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.form-container{
-    padding: 5rem 3rem;
-    max-width: 500px;
-    width: 95%;
-    background-color: var(--blanco);
-    border-radius: 1rem;
+.form-container {
+  padding: 5rem 3rem;
+  max-width: 500px;
+  width: 95%;
+  background-color: var(--blanco);
+  border-radius: 1rem;
 }
 
 .form-input-container {
-    display: flex;
-    margin-bottom: 2rem;
-    align-items: center;
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
 }
 .form-input-container:last-of-type {
   margin: 0;
@@ -358,7 +361,7 @@ aside  {
 }
 
 .form-input-container input[type="password"],
-.form-input-container input[type="email"], 
+.form-input-container input[type="email"],
 .form-input-container input[type="text"] {
   border: 1px solid #e1e1e1;
   padding: 1rem;
@@ -366,11 +369,11 @@ aside  {
   width: calc(100% - 32px);
 }
 
-.login-register-link{
+.login-register-link {
   margin-top: 2rem;
   display: block;
-  opacity: .7;
-  color: blue
+  opacity: 0.7;
+  color: blue;
 }
 
 .login-register-link:hover {
@@ -402,39 +405,38 @@ aside  {
 }
 
 @media (max-width: 768px) {
- .app-header{
-   position: absolute;
-   width: 100%;
-   top:0;
- }
+  .app-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+  }
 
- .side-bar-first-section{
-   margin-top: 130px;
- }
+  .side-bar-first-section {
+    margin-top: 130px;
+  }
 
- .project-select{
-   display: none;
- }
+  .project-select {
+    display: none;
+  }
 
- .projects-list li button {
-   font-size: 2.5rem;
- }
-
+  .projects-list li button {
+    font-size: 2.5rem;
+  }
 }
 
 @media (min-width: 768px) {
   .app-container {
-      display: flex;
-      min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
   }
 
   aside {
-      background-color: var(--blanco);
-      flex: 0 0 300px;
+    background-color: var(--blanco);
+    flex: 0 0 300px;
   }
 
   .main-section {
-      flex: 2;
+    flex: 2;
   }
 
   .alerta {
@@ -446,28 +448,26 @@ aside  {
 }
 
 @media (max-width: 420px) {
-  .task{
+  .task {
     height: 90px;
     width: 100vw;
     position: relative;
     right: 40px;
-
   }
 }
 
 @media (max-width: 330px) {
-  .btn-delete{
+  .btn-delete {
     position: relative;
     top: 5px;
     height: 40px;
   }
-  .user-name{
+  .user-name {
     position: relative;
     right: 15px;
   }
-  .logout{
+  .logout {
     position: relative;
     left: 15px;
   }
 }
-
