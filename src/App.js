@@ -1,5 +1,5 @@
-import React from 'react'
-import {BrowserRouter as Router, Switch} from "react-router-dom"
+import React from "react"
+import { BrowserRouter as Router, Switch } from "react-router-dom"
 import Login from "./components/users/Login"
 import Register from "./components/users/Register"
 import Projects from "./components/projects/Projects"
@@ -27,7 +27,7 @@ function App() {
         </AlertState>
       </TaskState>
     </ProjectState>
-  );
+  )
 }
 
-export default App;
+export default App
