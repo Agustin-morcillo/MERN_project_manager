@@ -1,8 +1,9 @@
 import React, { useReducer } from "react"
-import ProjectContext from "./ProjectContext"
-import ProjectReducer from "./ProjectReducer"
 import axiosClient from "../../config/axios"
 import authToken from "../../config/authToken"
+
+import ProjectContext from "./ProjectContext"
+import ProjectReducer from "./ProjectReducer"
 import {
   NEW_PROJECT_FORM,
   PROJECT_LIST,

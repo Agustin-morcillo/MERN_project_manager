@@ -1,7 +1,8 @@
 import React, { useReducer } from "react"
+import axiosClient from "../../config/axios"
+
 import TaskContext from "./TaskContext"
 import TaskReducer from "./TaskReducer"
-import axiosClient from "../../config/axios"
 import {
   PROJECT_TASKS,
   ADD_TASK,

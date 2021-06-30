@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { Route } from "react-router-dom"
+
 import AuthContext from "../../context/auth/AuthContext"
 
 export default function PrivateRoute({ component: Component, ...props }) {
