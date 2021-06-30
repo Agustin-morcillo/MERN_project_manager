@@ -4,6 +4,12 @@ import AlertContext from "../../context/alerts/AlertContext"
 import AuthContext from "../../context/auth/AuthContext"
 
 export default function Login(props) {
+  const [login, setLogin] = useState({
+    email: "",
+    password: "",
+  })
+  const { email, password } = login
+
   const alertContext = useContext(AlertContext)
   const { alert, showAlert, hideAlert } = alertContext
 
@@ -20,12 +26,6 @@ export default function Login(props) {
     }
     // eslint-disable-next-line
   }, [message, auth, props.history])
-
-  const [login, setLogin] = useState({
-    email: "",
-    password: "",
-  })
-  const { email, password } = login
 
   const handleChange = (e) => {
     setLogin({

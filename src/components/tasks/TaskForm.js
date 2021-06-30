@@ -3,6 +3,12 @@ import ProyectContext from "../../context/projects/ProjectContext"
 import TaskContext from "../../context/tasks/TaskContext"
 
 export default function TaskForm() {
+  const [newTask, setNewTask] = useState({
+    name: "",
+    projectId: null,
+  })
+  const { name } = newTask
+
   const ProjectsContext = useContext(ProyectContext)
   const { projectSelected } = ProjectsContext
 
@@ -22,12 +28,6 @@ export default function TaskForm() {
     }
     // eslint-disable-next-line
   }, [taskSelected])
-
-  const [newTask, setNewTask] = useState({
-    name: "",
-    projectId: null,
-  })
-  const { name } = newTask
 
   if (projectSelected.length < 1) {
     return null

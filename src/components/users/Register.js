@@ -4,6 +4,14 @@ import AlertContext from "../../context/alerts/AlertContext"
 import AuthContext from "../../context/auth/AuthContext"
 
 export default function Register(props) {
+  const [register, setRegister] = useState({
+    name: "",
+    email: "",
+    password: "",
+    repassword: "",
+  })
+  const { name, email, password, repassword } = register
+
   const alertContext = useContext(AlertContext)
   const { alert, showAlert, hideAlert } = alertContext
 
@@ -20,14 +28,6 @@ export default function Register(props) {
     }
     // eslint-disable-next-line
   }, [message, auth, props.history])
-
-  const [register, setRegister] = useState({
-    name: "",
-    email: "",
-    password: "",
-    repassword: "",
-  })
-  const { name, email, password, repassword } = register
 
   const handleChange = (e) => {
     setRegister({

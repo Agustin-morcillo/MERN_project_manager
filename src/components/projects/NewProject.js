@@ -2,15 +2,16 @@ import React, { useContext, useState } from "react"
 import ProyectContext from "../../context/projects/ProjectContext"
 
 export default function NewProject() {
-  const ProjectsContext = useContext(ProyectContext)
-  const { newProjectForm, showForm } = ProjectsContext
-  const { addProject, formError, showFormError } = ProjectsContext
-
   const [newProject, setNewProject] = useState({
     name: "",
     id: "",
   })
   const { name } = newProject
+
+  const ProjectsContext = useContext(ProyectContext)
+
+  const { newProjectForm, showForm } = ProjectsContext
+  const { addProject, formError, showFormError } = ProjectsContext
 
   const handleChange = (e) => {
     setNewProject({
