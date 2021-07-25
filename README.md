@@ -26,7 +26,7 @@ Application to create projects and associate tasks within them. Tasks and projec
 
 The project has three views: the **Login**, the **Registration**, and the **project/task Dashboard.**
 
-**It was used:**
+**Used technologies:**
 - **JSON Web Token** (to auth users)
 - **Hooks**: useState, useEffect, useContext, useReducer.
 - **React Router** (with public and private routes)
